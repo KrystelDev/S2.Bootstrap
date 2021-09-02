@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> <!-- Sirve para usar caracteres como la ñ y signos de interrogacion accentos etc -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S2. Bootstrap</title>
+  <link href="css/estilopropio.css" rel="stylesheet" type="text/css">
+
+  <!-- Bootstrap CDN -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Paquete de iconos -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"> </script>
+  <script nomodule src="js/ionicons.js"> </script>
+
+</head>
+
+<!-- Tener en cuenta para Grip:
+      xs <576px	  Class prefix	.col-	
+      sm ≥576px	  Class prefix	.col-sm-
+      md ≥768px	  Class prefix  .col-md-
+      lg ≥992px	  Class prefix  .col-lg-
+      xl ≥1200px	Class prefix  .col-xl-
+      xxl ≥1400px Class prefix  .col-xxl-
+      # of columns	12 -->
+
+<!-- **************** Empieza la visaluzación de la pag web **************** -->
+<!--cabezera-->
+<header>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-md navbar-light bg-light row">
+
+      <!--Logo con texto-->
+      <div class="col-6 col-md-4">
+        <a href="#" class="navbar-brand">
+          <img src="css/pngwing.com.png">
+          DigimonCard
+        </a>
+      </div>
+
+      <!--Iconos para venatanas modales y formularios (login y registre)-->
+      <!--buttons-->
+      <div class="col-3 col-md-2 justify-content-evenly">
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#login">
+          <ion-icon name="person-circle-outline"></ion-icon>
+        </button>
+
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#registre">
+          <ion-icon name="person-add-outline"></ion-icon>
+        </button>
+
+
+        <!--Contenido de los buttons modals-->
+        <!--Loing-->
+        <div class="modal fade" id="login">
+          <div class="modal-dialog">
+
+            <div class="modal-content">
+
+              <!--header modal-->
+              <div class="modal-header text-center">
+                <p class="modal-title text-center">Conectar</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <!--body modal-->
+              <div class="modal-body">
+                <div class="md-form">Usuario:
+                  <input type="text" class="form-control validate" placeholder="TamerValor">
+                  <label data-error="wong" data-success="right"></label>
+                </div>
+                <div class="md-form">Contraseña:
+                  <input type="text" class="form-control validate" placeholder="********">
+                  <label data-error="wong" data-success="right"></label>
+                </div>
+              </div>
+
+              <!--footer modal-->
+              <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn-warning" data-bs-dismiss="modal" aria-label="Close">Entrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Registre-->
+        <div class="modal fade" id="registre">
+          <div class="modal-dialog">
+
+            <div class="modal-content">
+
+              <!--header modal-->
+              <div class="modal-header text-center">
+                <p class="modal-title text-center">Registrar</p>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <!--body modal-->
+              <div class="modal-body">
+                <div class="md-form">E-mail:
+                  <input type="text" class="form-control validate" placeholder="Ejemplo@servidor.com">
+                  <label data-error="wong" data-success="right"></label>
+                </div>
+                <div class="md-form">Nombre:
+                  <input type="text" class="form-control validate" placeholder="Tai">
+                  <label data-error="wong" data-success="right"></label>
+                </div>
+                <div class="md-form">Apellidos:
+                  <input type="text" class="form-control validate" placeholder="Kamiya Ishida">
+                  <label data-error="wong" data-success="right"></label>
+                </div>
+                <div class="md-form">Usuario:
+                  <input type="text" class="form-control validate" placeholder="TamerValor">
+                  <label data-error="wong" data-success="right"></label>
+                </div>
+                <div class="md-form">Contraseña:
+                  <input type="text" class="form-control validate" placeholder="********">
+                  <label data-error="wong" data-success="right"></label>
+                </div>
+                <div class="md-form">Repite la contraseña:
+                  <input type="text" class="form-control validate" placeholder="********">
+                  <label data-error="wong" data-success="right"></label>
+                </div>
+              </div>
+
+              <!--footer modal-->
+              <div class="modal-footer d-flex justify-content-center">
+                <button type="button" class="btn-warning" data-bs-dismiss="modal" aria-label="Close">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Hipervinculos expandido a partir de md, más pequeño comprimido en hamburgesa-->
+      <div class="col-3 col-md-6">
+        <div class="navbar-header">
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
+        <div class="navbar-collapse collapse justify-content-end" id="menu">
+          <ul class="nav navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link">Eventos</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Productos</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Normas del juego</a></li>
+            <!-- Por si se necesita un link con desplegables:
+                                  <li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle" data-toglle="dropdown">Link 4</a>
+                                    <div class="dropdown-menu">
+                                      <a href="#" class="dropdown-item">submenu1</a>
+                                      <a href="#" class="dropdown-item">submenu2</a>
+                                      <a href="#" class="dropdown-item">submenu3</a>
+                                      </div>
+                                  </li> -->
+          </ul>
+        </div>
+      </div>
+
+    </nav>
+  </div>
+
+</header>
+
+
+
+
+
+
+
+<!--Cuerpo-->
+
+<body>
+
+  <!--Slider de Eventos-->
+  <div class="row">
+    <div id="deslizarImagenes" class="carousel silde col-12" data-ride="carousel">
+      <!--las imagenes que saldrán en el slider por este orden-->
+      <div class="carousel-inner">
+        <div class="carousel-item active primero">
+          <img style="max-width: 80%; height: auto; margin: auto;" src="./css/Evento1.png" alt="Evento1"
+            class="d-block w-100">
+        </div>
+        <div class="carousel-item segundo">
+          <img style="max-width: 80%; height: auto; margin: auto;" src="./css/Evento2.png" alt="Evento2"
+            class="d-block w-100">
+        </div>
+        <div class="carousel-item tercero">
+          <img style="max-width: 80%; height: auto; margin: auto;" src="./css/Evento3.png" alt="Evento3" class="d-block w-100">
+        </div>
+        <div class="carousel-item cuarto">
+          <img style="max-width: 80%; height: auto; margin: auto;" src="./css/Evento4.png" alt="Evento4"
+            class="d-block w-100">
+        </div>
+      </div>
+      <!--deslizar con flechas-->
+      <!--ver foto anterior-->
+      <a class="carousel-control-prev" href="#deslizarImagenes" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </a>
+      <!--ver foto siguiente-->
+      <a class="carousel-control-next" href="#deslizarImagenes" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </a>
+
+    </div>
+  </div>
+
+
+  <!--pie de página-->
+  <footer>
+    <div class="container-fluid clearfix">
+      <div class="row">
+        <section class="col-12 col-md-4">
+          <h4 class="title">Sobre DigimonCards.com</h4>
+          <p> Somos un marketplace especializado en cartas coleccionables.
+          Ofrecemos a nuestros usuarios una plataforma de compra
+          y venta de cartas de Digimon mediante un sistema completamente
+          seguro que permite tanto a los compradores como los vendedores realizar sus
+          transacciones de forma segura. Además ofrecemos todo tupo de merchandaising
+          y eventos oficiales de Digimon.</p>
+        </section>
+
+        <section class="col-12 col-md-4">
+            <h4 class="title">Tus Compras seguras</h4>
+            <img src="./css/Compra-segura-300x210.png"
+              alt="Garantia de seguridad para comprar cartas digimon"/>
+        </section>
+
+        <section class="col-12 col-md-4">
+            <h4 class="title">Información legal</h4>
+              <p>Para ofrecer un servicio de calidad, 
+                tenemos a tu disposición la siguiente información:</p>
+              <ul>
+                <li><a href="#"><strong>Términos y
+                      Condiciones</strong></a></li>
+                <li><a href="#"><strong>Política de Cookies </strong></a></li>
+                <li><a href="#"><strong>Política de Privacidad</strong></a>
+                </li>
+                <li><a href="#"><strong>Atención al cliente</strong></a></li>
+              </ul>
+        </section>
+
+      </div> <!-- end row-->
+    </div> <!-- end container-->
+  </footer>
+
+</body>
+
+<!-- **************** Finaliza la visaluzación de la pag web **************** -->
+<!-- Sirve para usar Bootstrap que requieran Javascript-->
+<script src="./js/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="./js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script> <!--Necesario para Slider-->
+
+</html>

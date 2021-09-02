@@ -1,0 +1,24 @@
+/* Declarar valiables de colores*/
+$primary: #FC4747;
+$secondary: #FC9147;
+$success: #FCDE47;
+$info: #C8FC47;
+$warning: #47FC8C;
+$danger: #47FCF7;
+$light: #474FFC;
+$dark: #AC47FC;
+$while: #FFFFFF;
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "while":      $while,
+);
+
+@import "./node_modules/bootstrap/scss/bootstrap"

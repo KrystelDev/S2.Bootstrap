@@ -1,0 +1,49 @@
+/* Tamaño del Logo igual para todas las pantallas*/
+.navbar-brand img{
+    width: 80px;
+}
+
+/* evitar la barra de desplazamiento horizontal: 
+body{
+    overflow-x: hidden;
+ }*/
+
+ /* Fondo de cada imagen del Slider: */
+ .primero{
+    background-image: linear-gradient(to right, #2d9cc8 , #3fb9d8);
+ }
+
+ .segundo{
+    background-image: linear-gradient(to right, #1242aa , #1c55be);
+ }
+
+ .tercero{
+    background-image: linear-gradient(to right, #53bcd9 , #92ccdd);
+ }
+ .cuarto{
+    background-image: linear-gradient(to right, #fa6a0d , #ffad17);
+ }
+
+ 
+footer .row{ /* Espaciar todo el conjunto de footer */
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+ footer section{
+    padding-top: 5%; /* Espaciar secciones entre ellas*/
+    text-align: justify;
+}
+ footer .title{
+    text-align: center;
+    color:#ffad17;
+    text-shadow: chocolate;
+    font-weight: bold;
+ }
+ footer img{ /* Los tres primeros atributos son para centrar imagen*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: auto;
+}
